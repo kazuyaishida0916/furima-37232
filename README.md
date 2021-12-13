@@ -5,7 +5,7 @@
 | Column             | Type   | Options                   |
 | -------------------| ------ | --------------------------|
 | nickname           | string | null: false               |
-| encrypted_password | string | null: false, unique: true |
+| encrypted_password | string | null: false               |
 | email              | string | null: false, unique: true |
 | family_name        | string | null: false               |
 | first_name         | string | null: false               |
@@ -16,7 +16,7 @@
 ### Association
 
 - has_many :items
-- has_many :card
+- has_many :cards
 
 ## items テーブル
 
@@ -25,10 +25,10 @@
 | item_name         | string     | null: false                 |
 | item_detail       | text       | null: false                 |
 | item_category_id  | integer    | null: false                 |
-| item_condition    | integer    | null: false                 |
-| shipping_cost     | integer    | null: false                 |
+| item_condition_id | integer    | null: false                 |
+| shipping_cost_id  | integer    | null: false                 |
 | prefecture_id     | integer    | null: false                 |
-| shipping_days     | integer    | null: false                 |
+| shipping_days_id  | integer    | null: false                 |
 | item_price        | integer    | null: false                 |
 | user              | references | null:false,foreign_key:true |
 
@@ -36,7 +36,7 @@
 ### Association
 
 - belongs_to :user
-- belongs_to :cards
+- has_one :card
 
 ## cards テーブル
 
@@ -48,7 +48,8 @@
 ### Association
 
 - belongs_to :user
-- has many   :items
+- belongs_to :item
+- has_one    :ship_address
 
 ## ship_addresses
 
@@ -64,4 +65,4 @@
 
 
 ### Association
-- belongs_to :user
+- belongs_to :card
