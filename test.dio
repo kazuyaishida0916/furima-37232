@@ -1,0 +1,55 @@
+<mxfile host="65bd71144e">
+    <diagram id="b-1jcsqDYMidQyIbrkRD" name="ページ1">
+        <mxGraphModel dx="917" dy="907" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-1" value="usersテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="30" y="100" width="330" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-2" value="nickname  string null: false               &#10;encrypted_password  string  null: false&#10;email string  null: false, unique: true &#10;family_name  string null: false&#10;first_name  string null: false&#10;family_name_kana string null: false            &#10;first_name_kana string null: false &#10;birth_day data null: false     " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="85_vzhjiqKF4pWe78QdD-1" vertex="1">
+                    <mxGeometry y="30" width="330" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=none;html=1;exitX=0.5;exitY=0;exitDx=0;exitDy=0;entryX=0.47;entryY=1.031;entryDx=0;entryDy=0;entryPerimeter=0;startArrow=ERone;startFill=0;endArrow=ERone;endFill=0;" parent="1" source="85_vzhjiqKF4pWe78QdD-5" target="85_vzhjiqKF4pWe78QdD-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-5" value="cardsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="370" width="290" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-6" value="item references  null: false, foreign_key: true&#10;user references null: false, foreign_key: true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="85_vzhjiqKF4pWe78QdD-5" vertex="1">
+                    <mxGeometry y="30" width="290" height="50" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-8" value="itemsテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="450" width="240" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-9" value="item_name string null: false     &#10;item_detail text null: false                  &#10;item_category_id  integer null: false&#10;item_condition_id integer null: false&#10;shipping_cost_id integer null: false&#10;prefecture_id integer null: false               &#10;shipping_days_id integer null: false&#10;item_price integer null: false   " style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="85_vzhjiqKF4pWe78QdD-8" vertex="1">
+                    <mxGeometry y="30" width="240" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-10" value="Ship_addressesテーブル" style="swimlane;childLayout=stackLayout;horizontal=1;startSize=30;horizontalStack=0;rounded=1;fontSize=14;fontStyle=0;strokeWidth=2;resizeParent=0;resizeLast=1;shadow=0;dashed=0;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="110" width="270" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-11" value="post_code string null:false                  &#10;prefecture_id  integer null:false             &#10;city string null:false                  &#10;address string null:false                  &#10;building_name  string&#10;phone_number string null:false                  &#10;card referencesnull:false,foreign_key:true" style="align=left;strokeColor=none;fillColor=none;spacingLeft=4;fontSize=14;verticalAlign=top;resizable=0;rotatable=0;part=1;" parent="85_vzhjiqKF4pWe78QdD-10" vertex="1">
+                    <mxGeometry y="30" width="270" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-14" style="edgeStyle=none;html=1;fontSize=14;strokeWidth=1;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;" parent="1" source="85_vzhjiqKF4pWe78QdD-2" target="85_vzhjiqKF4pWe78QdD-11" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-15" style="edgeStyle=none;html=1;exitX=1;exitY=1;exitDx=0;exitDy=0;fontSize=14;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeColor=#f0f0f0;strokeWidth=1;entryX=0;entryY=0;entryDx=0;entryDy=0;" parent="1" source="85_vzhjiqKF4pWe78QdD-2" target="85_vzhjiqKF4pWe78QdD-5" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="410" y="370" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="85_vzhjiqKF4pWe78QdD-16" style="edgeStyle=none;html=1;exitX=0.373;exitY=1.027;exitDx=0;exitDy=0;fontSize=14;startArrow=ERone;startFill=0;endArrow=ERmany;endFill=0;strokeColor=#f0f0f0;strokeWidth=1;exitPerimeter=0;" parent="1" source="85_vzhjiqKF4pWe78QdD-2" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="149" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" style="edgeStyle=none;html=1;exitX=1;exitY=0.25;exitDx=0;exitDy=0;endArrow=ERone;endFill=0;startArrow=ERone;startFill=0;" edge="1" parent="1" source="85_vzhjiqKF4pWe78QdD-9">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="470" y="440" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
