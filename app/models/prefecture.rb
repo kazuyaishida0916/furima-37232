@@ -1,41 +1,7 @@
-class Item_category < ActiveHash::Base
-  self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: 'レディース' },
-    { id: 3, name: 'メンズ' },
-    { id: 4, name: 'ベビー・キッズ' },
-    { id: 5, name: 'インテリア・住まい・小物' },
-    { id: 6, name: '本・音楽・ゲーム' },
-    { id: 7, name: 'おもちゃ・ボビー・グッズ' },
-    { id: 8, name: '家電・スマホ・カメラ' },
-    { id: 9, name: 'スポーツ・レンジャー' },
-    { id: 10, name: 'ハンドメイド' },
-    { id: 11, name: 'その他' }
-  ]
-end
-
-class Item_condition < ActiveHash::Base
-  self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '新品・未使用' },
-    { id: 3, name: '未使用に近い' },
-    { id: 4, name: '目立った傷や汚れはなし' },
-    { id: 5, name: 'やや傷や汚れあり' },
-    { id: 6, name: '傷や汚れあり' }
-  ]
-end
-
-class Shipping_cost < ActiveHash::Base
-  self.data = [
-    { id: 1, name: '--' },
-    { id: 2, name: '着払い(購入者負担)' },
-    { id: 3, name: '送料込み(出品者負担)' }
-  ]
-end
-
 class Prefecture < ActiveHash::Base
 
   self.data = [
+      { id: 0, name: '---' },
       {id: 1, name: '北海道'}, {id: 2, name: '青森県'}, {id: 3, name: '岩手県'},
       {id: 4, name: '宮城県'}, {id: 5, name: '秋田県'}, {id: 6, name: '山形県'},
       {id: 7, name: '福島県'}, {id: 8, name: '茨城県'}, {id: 9, name: '栃木県'},
@@ -53,22 +19,6 @@ class Prefecture < ActiveHash::Base
       {id: 43, name: '熊本県'}, {id: 44, name: '大分県'}, {id: 45, name: '宮崎県'},
       {id: 46, name: '鹿児島県'}, {id: 47, name: '沖縄県'}
   ]
-
-end
-
-class Shipping_day < ActiveHash::Base
-  self.data = [
-    { id: 0, date: '---' },
-    { id: 1, date: '1~2日で発送' },
-    { id: 2, date: '2~3日で発送' },
-    { id: 3, date: '4~7日で発送' }
-  ]
-end
-
-
-
-
-include ActiveHash::Associations
-has_many :articles
-
+  include ActiveHash::Associations
+  has_many :items
 end
