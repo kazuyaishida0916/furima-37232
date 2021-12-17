@@ -1,7 +1,8 @@
 function post (){
   const priceInput = document.getElementById("item-price");
   priceInput.addEventListener("input", () => {
-    console.log("イベント発火");
+    const inputValue = priceInput.value;
+    console.log(inputValue);
  })
 };
 
