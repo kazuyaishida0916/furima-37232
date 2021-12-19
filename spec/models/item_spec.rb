@@ -59,7 +59,7 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Item price is not a number')
       end
       it 'カテゴリーの情報がないとアイテムは保存できない' do
-        @item.item_category_id = "1"
+        @item.item_category_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Item category can't be blank")
       end
