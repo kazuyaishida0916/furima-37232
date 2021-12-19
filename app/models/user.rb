@@ -10,14 +10,14 @@ class User < ApplicationRecord
     validates :first_name
     validates :last_name
   end
-  with_options presence: true, format:{with: /\A[ァ-ヶー－]+\z/, message: 'is invalid' } do
-  validates :last_name_kana 
-  validates :first_name_kana
-  end  
+  with_options presence: true, format: { with: /\A[ァ-ヶー－]+\z/, message: 'is invalid' } do
+    validates :last_name_kana
+    validates :first_name_kana
+  end
 
-  validates :birth_day, presence: true 
+  validates :birth_day, presence: true
 
-  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?[\d])[a-z\d]+\z/i.freeze
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates_format_of :password, with: PASSWORD_REGEX, message: 'is invalid'
-has_many :items
+  has_many :items
 end
