@@ -59,27 +59,27 @@ RSpec.describe Item, type: :model do
         expect(@item.errors.full_messages).to include('Item price is not a number')
       end
       it 'カテゴリーの情報がないとアイテムは保存できない' do
-        @item.item_category_id = ''
+        @item.item_category_id = "1"
         @item.valid?
         expect(@item.errors.full_messages).to include("Item category can't be blank")
       end
       it '商品の状態の情報がないとアイテムは保存できない' do
-        @item.item_condition_id = ''
+        @item.item_condition_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Item condition can't be blank")
       end
       it '配送料の負担の情報がないとアイテムは保存できない' do
-        @item.shipping_cost_id = ''
+        @item.shipping_cost_id = '1'
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping cost can't be blank")
       end
       it '発送元の地域の情報がないとアイテムは保存できない' do
-        @item.prefecture_id = ' '
+        @item.prefecture_id = '0'
         @item.valid?
         expect(@item.errors.full_messages).to include("Prefecture can't be blank")
       end
       it '発送までの日数の情報がないとアイテムは保存できない' do
-        @item.shipping_days_id = ''
+        @item.shipping_days_id = '0'
         @item.valid?
         expect(@item.errors.full_messages).to include("Shipping days can't be blank")
       end
