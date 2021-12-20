@@ -153,9 +153,7 @@
         </div>
         <% end %>
       </li>
-     <% end %>
-
-      
+     <% end %> 
    <% else %>
       <li class='list'>
           <%= link_to "#" do %>
@@ -174,13 +172,12 @@
         </div>
         <% end %>
       </li>
+      <% end %>
      </ul>
   </div>
-   <% end %>
-  <%# /商品一覧 %>
-</div>
+</div> 
 <%= link_to(new_item_path, class: 'purchase-btn') do %>
   <span class='purchase-btn-text'>出品する</span>
   <%= image_tag 'icon_camera.png' , size: '185x50' ,class: "purchase-btn-icon" %>
-<%= render "shared/footer" %>
 <% end %>
+<%= render "shared/footer" %>
