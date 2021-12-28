@@ -16,6 +16,9 @@ RSpec.describe CardAddress, type: :model do
       @card_address.building_name = ''
       expect(@card_address).to be_valid
     end
+    it "priceとtokenがあれば保存ができること" do
+      expect(@card_address).to be_valid
+    end
   end
   context '内容に問題がある場合' do
     it 'post_codeが空だと保存できないこと' do
@@ -57,6 +60,11 @@ RSpec.describe CardAddress, type: :model do
       @card_address.item_id = nil
       @card_address.valid?
       expect(@card_address.errors.full_messages).to include("Item can't be blank")
+    end
+    it "tokenが空では登録できないこと" do
+      @card_address.token = nil
+      @card_address.valid?
+      expect(@card_address.errors.full_messages).to include("Token can't be blank")
     end
   end
  end
