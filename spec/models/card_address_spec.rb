@@ -31,18 +31,23 @@ RSpec.describe CardAddress, type: :model do
         @card_address.valid?
         expect(@card_address.errors.full_messages).to include('Post code is invalid. Include hyphen(-)')
       end
-      it 'phone_numberが10桁以下では購入できない' do
+      it 'phone_numberが９桁以下では購入できない' do
         @card_address.phone_number = '090123456'
         @card_address.valid?
         expect(@card_address.errors.full_messages).to include('Phone number is invalid.')
       end
-      it 'phone_numberが11桁以上では購入できない' do
+      it 'phone_numberが1２桁以上では購入できない' do
         @card_address.phone_number = '090123456789'
         @card_address.valid?
         expect(@card_address.errors.full_messages).to include('Phone number is invalid.')
       end
       it 'phone_numberが半角数値以外では購入できない' do
         @card_address.phone_number = '１'
+        @card_address.valid?
+        expect(@card_address.errors.full_messages).to include('Phone number is invalid.')
+      end
+      it 'phone_numberが空では購入できない' do
+        @card_address.phone_number = ''
         @card_address.valid?
         expect(@card_address.errors.full_messages).to include('Phone number is invalid.')
       end

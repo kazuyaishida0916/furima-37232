@@ -1,10 +1,11 @@
 class OrdersController < ApplicationController
   before_action :authenticate_user!, only: :index
-  before_action :move_to_index, only: [:index]
+  before_action :move_to_index, only: :index
+
   def index
     @item = Item.find(params[:item_id])
     @card_address = CardAddress.new
-    redirect_to root_path if current_user == @item.user
+   
   end
 
   def create
@@ -34,6 +35,6 @@ class OrdersController < ApplicationController
 
   def move_to_index
     @item = Item.find(params[:item_id])
-    redirect_to root_path
-  end
+      redirect_to root_path if current_user == @item.user
+    end
 end
